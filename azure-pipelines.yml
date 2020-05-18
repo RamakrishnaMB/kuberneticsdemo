@@ -8,16 +8,16 @@ trigger:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'f6a12d05-a628-4a03-8865-253618532280'
+  dockerRegistryServiceConnection: 'a634b695-cce7-4a04-93a8-ee77ca6af0c9'
   imageRepository: 'cicddockerimageinkubernetes'
   containerRegistry: 'acrkuberdemo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'acrkuberdemo1405ad06-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
   
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -49,7 +49,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'RamakrishnaMBkuberneticsdemo-2146.default'
+    environment: 'RamakrishnaMBkuberneticsdemo-1016.default'
     strategy:
       runOnce:
         deploy:
