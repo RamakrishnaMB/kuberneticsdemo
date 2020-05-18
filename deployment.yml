@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuberneticsdemo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: kuberneticsdemo-pod
+  template:
+    metadata:
+      labels:
+        app: kuberneticsdemo-pod
+    spec:
+      containers:
+      - name: kuberneticsdemo-container
+        image: acrkuberdemo.azurecr.io/kuberneticsdemo:new
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
