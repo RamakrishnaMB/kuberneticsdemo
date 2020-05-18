@@ -13,7 +13,6 @@ variables:
   containerRegistry: 'acrkuberdemo.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'acrkuberdemo1630f11d-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
